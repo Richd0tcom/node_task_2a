@@ -3,11 +3,14 @@
 const details = document.getElementById('weather-details')
 const weatherForm = document.getElementById('weather-form')
 
-
+const weatherValue = document.getElementById('inputLarge').value
 
 async function displayWeather(e){
+    const weatherValue = document.getElementById('inputLarge').value
+    console.log(weatherValue);
     e.preventDefault()
-     const res = await fetch(`http://api.weatherapi.com/v1/current.json?key=3c6bb061f8d84eb3a5a134932222508&q=London`);
+     const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=3c6bb061f8d84eb3a5a134932222508&q=${weatherValue}`);
+     
      const data = await res.json()
      console.log(data);
 

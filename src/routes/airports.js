@@ -7,10 +7,12 @@ router.get('/', async(req, res) => {
     
     try {
         const d = await Airport.findAll();
-        console.log(d[0].dataValues)
-        res.send({status: 'success'})
+        const x = d[0].dataValues
+        // console.log(d[0].dataValues)
+        res.status(200).json({data:x})
     } catch (error) {
         console.log(error)
+        res.status(404)
     }
 
 });
