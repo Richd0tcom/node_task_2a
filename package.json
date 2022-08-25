@@ -1,0 +1,31 @@
+{
+  "name": "node_task_2a",
+  "version": "1.0.0",
+  "description": "NodeJS Task 2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Richd0tcom/node_task_2a.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Richd0tcom/node_task_2a/issues"
+  },
+  "homepage": "https://github.com/Richd0tcom/node_task_2a#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.4",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
