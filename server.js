@@ -14,9 +14,9 @@ app.use(cors({
     origin:"*"
 }))
 
-//json parsing middleware
-// app.use(express.json());
-// app.use(express.urlencoded({extended:true}));
+// json parsing middleware
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
 app.get('/', (req, res) => {
     res.send("we're good")

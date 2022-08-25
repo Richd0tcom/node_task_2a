@@ -19,21 +19,22 @@ router.get('/', async(req, res) => {
 
 });
 
-// router.post("/", async (req, res) => {
-//     const { items } = req.body;
+router.post("/", async (req, res) => {
+    const item = req.body
+    console.log(parseInt(item.dt))
   
-//     // Create a PaymentIntent with the order amount and currency
-//     const paymentIntent = await stripe.paymentIntents.create({
-//       amount: calculateOrderAmount(items),
-//       currency: "usd",
-//       automatic_payment_methods: {
-//         enabled: true,
-//       },
-//     });
+    // Create a PaymentIntent with the order amount and currency
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: parseInt(item.dt),
+      currency: "usd",
+      automatic_payment_methods: {
+        enabled: true,
+      },
+    });
   
-//     res.send({
-//       clientSecret: paymentIntent.client_secret,
-//     });
-//   });
+    res.send({
+      clientSecret: paymentIntent.client_secret,
+    });
+  });
 
 module.exports = router;    

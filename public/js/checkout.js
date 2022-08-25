@@ -2,14 +2,15 @@
 // Don’t submit any personally identifiable information in requests made with this key.
 // Sign in to see your own test API key embedded in code samples.
 const stripe = Stripe("pk_test_51IWQUwH8oljXErmdg6L4MhsuB6tDdmumlHFfyNaopty2U27pmRcqMX1c868zn838lGQtU1eYV6bKRSQtMFWf36VT00aNsvnTOE");
-
+const amt = localStorage.getItem("ammountToPay");
+console.log(amt)
 // The items the customer wants to buy
 const items = [{ id: "xl-tshirt" }];
 
 let elements;
 
-initialize();
-checkStatus();
+// initialize();
+// checkStatus();
 
 document
   .querySelector("#payment-form")
@@ -20,7 +21,7 @@ async function initialize() {
   const response = await fetch("http://localhost:5000/airports", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ items }),
+    body: JSON.stringify({dt:amt}),
   });
   const { clientSecret } = await response.json();
 
@@ -114,3 +115,6 @@ function setLoading(isLoading) {
     document.querySelector("#button-text").classList.remove("hidden");
   }
 }
+
+initialize();
+checkStatus();
