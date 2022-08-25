@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="checkout.js" defer></script>
     <title>Airline page</title>
     <style>
         *{
@@ -38,33 +40,52 @@
           </section>
 
 
-          <section>
+          <section class="mt-5">
             <!-- Airline section -->
-            <div class="d-flex">
-
-            </div>
-            <div class="dropdown">
-                <form class="px-4 py-2 " data-toggle="dropdown" aria-haspopup="true">
-                    <input type="search" class="form-control" id="searchCoin" placeholder="BTC" autofocus="autofocus">
-                </form>
-                <div id="menu" class="dropdown-menu" aria-labelledby="dropdown_coins">
-                    
-                    <div class="menuItems"></div>
-                    <div id="empty" class="dropdown-header">No airports found</div>
+            <div class="d-flex pt-5 pb-5">
+                <div class="dropdown">
+                    <form class="px-4 py-2 " data-toggle="dropdown" aria-haspopup="true">
+                        <input type="search" class="form-control airport-form"  placeholder="BTC" autofocus="autofocus">
+                    </form>
+                    <div id="menu" class="dropdown-menu" aria-labelledby="dropdown_coins">
+                        
+                        <div class="menuItems"></div>
+                        <div id="empty" class="dropdown-header">No airports found</div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <form class="px-4 py-2 " data-toggle="dropdown" aria-haspopup="true">
+                        <input type="search" class="form-control airport-form"  placeholder="BTC" autofocus="autofocus">
+                    </form>
+                    <div id="menu" class="dropdown-menu" aria-labelledby="dropdown_coins">
+                        
+                        <div  class="menuItems"></div>
+                        <div id="empty" class="dropdown-header">No airports found</div>
+                    </div>
                 </div>
             </div>
-            <div class="dropdown">
-                <form class="px-4 py-2 " data-toggle="dropdown" aria-haspopup="true">
-                    <input type="search" class="form-control" id="searchCoin" placeholder="BTC" autofocus="autofocus">
-                </form>
-                <div id="menu" class="dropdown-menu" aria-labelledby="dropdown_coins">
-                    
-                    <div  class="menuItems"></div>
-                    <div id="empty" class="dropdown-header">No airports found</div>
-                </div>
-            </div>
+            
 
+            <table class="table table-hover mt-5">
+                <thead>
+                  <tr>
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    <th scope="col">distance</th>
+                    <th scope="col">Amount to pay</th>
+                  </tr>
+                </thead>
+                <tbody id="airline data">
+                  <tr class="table-active" id="airline data">
+                    <th scope="row">Active</th>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                </tbody>
+              </table>
           </section>
+
     </div>
     
 
@@ -77,5 +98,6 @@
     
     <script src="./js/weather.js"  type="module"></script>
     <script src="./js/airports.js" ></script>
+    <script src="./js/checkout.js"></script>
 </body>
 </html>
